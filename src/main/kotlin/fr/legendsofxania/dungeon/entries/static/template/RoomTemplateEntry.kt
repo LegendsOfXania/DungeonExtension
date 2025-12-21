@@ -13,7 +13,7 @@ import fr.legendsofxania.dungeon.interactions.content.RoomTemplateContentMode
     Colors.PINK,
     "tabler:building-bridge-2"
 )
-@Tags("template")
+@Tags("room_template")
 /**
  * The `Room Template` entry is used to store the room's data.
  *

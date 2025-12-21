@@ -5,6 +5,7 @@ import com.typewritermc.core.entries.Ref
 import com.typewritermc.core.entries.emptyRef
 import com.typewritermc.core.extension.annotations.Entry
 import com.typewritermc.core.extension.annotations.Help
+import com.typewritermc.core.extension.annotations.Tags
 import com.typewritermc.core.utils.point.Coordinate
 import com.typewritermc.engine.paper.entry.ManifestEntry
 import com.typewritermc.engine.paper.entry.entries.ConstVar
@@ -16,6 +17,7 @@ import com.typewritermc.engine.paper.entry.entries.Var
     Colors.ORANGE,
     "tabler:building"
 )
+@Tags("dungeon_definition")
 /**
  * The `Dungeon Definition` entry is used to define dungeon.
  *
