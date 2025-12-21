@@ -41,6 +41,7 @@ class RoomTemplateContentMode(
     }
 }
 
+@Suppress("UnstableApiUsage")
 private class SelectionTool(
     private val entryId: String
 ) : ContentComponent, ItemComponent {
