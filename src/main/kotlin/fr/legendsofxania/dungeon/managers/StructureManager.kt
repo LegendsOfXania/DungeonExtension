@@ -21,7 +21,24 @@ object StructureManager {
     suspend fun placeRooms(
         player: Player,
         context: InteractionContext,
-        instance: DungeonInstance,
+        instance: DungeonInstance
+    ) {
+        val dungeonEntry = instance.definition.entry
+            ?: error("DungeonDefinitionEntry not found for ${instance.definition}")
+
+        val rootEntry = dungeonEntry.child.entry
+            ?: error("RoomInstanceEntry not found for ${dungeonEntry.child}")
+
+        placeRoom(player, context, rootEntry, instance.location)
+
+        rootEntry.children.forEach { child ->
+            placeRoomsRecursive(player, context, child, instance.location)
+        }
+    }
+
+    private suspend fun placeRoomsRecursive(
+        player: Player,
+        context: InteractionContext,
         ref: Ref<RoomDefinitionEntry>,
         location: Location
     ) {
@@ -30,7 +47,7 @@ object StructureManager {
         placeRoom(player, context, entry, location)
 
         entry.children.forEach { child ->
-            placeRooms(player, context, instance, child, location)
+            placeRoomsRecursive(player, context, child, location)
         }
     }
 
@@ -38,14 +55,14 @@ object StructureManager {
         player: Player,
         context: InteractionContext,
         entry: RoomDefinitionEntry,
-        baseLocation: Location
+        location: Location
     ) {
         val templateId = entry.template.get(player, context).id
         val structure = TemplateManager.loadTemplate(templateId)
             ?: error("Structure not found for RoomTemplate: $templateId")
 
         val direction = entry.direction.get(player, context)
-        val roomLocation = baseLocation.clone().add(direction.getOffset(structure.size))
+        val roomLocation = location.clone().add(direction.getOffset(structure.size))
 
         withContext(Dispatchers.Sync) {
             structure.place(
