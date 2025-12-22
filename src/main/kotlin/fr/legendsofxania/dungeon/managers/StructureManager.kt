@@ -51,9 +51,9 @@ object StructureManager {
             structure.place(
                 roomLocation,
                 true,
-                 StructureRotation.NONE,
+                StructureRotation.NONE,
                 Mirror.NONE,
-                 0,
+                0,
                 1f,
                 Random()
             )
