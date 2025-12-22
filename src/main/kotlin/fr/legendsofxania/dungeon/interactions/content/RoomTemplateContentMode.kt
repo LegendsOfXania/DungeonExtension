@@ -8,14 +8,12 @@ import com.typewritermc.engine.paper.content.ContentContext
 import com.typewritermc.engine.paper.content.ContentMode
 import com.typewritermc.engine.paper.content.components.*
 import com.typewritermc.engine.paper.content.entryId
-import com.typewritermc.engine.paper.utils.Sync
 import com.typewritermc.engine.paper.utils.asMini
 import com.typewritermc.engine.paper.utils.msg
 import fr.legendsofxania.dungeon.managers.TemplateManager
 import io.papermc.paper.datacomponent.DataComponentTypes
 import io.papermc.paper.datacomponent.item.ItemLore
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import net.kyori.adventure.bossbar.BossBar
 import org.bukkit.Location
 import org.bukkit.Material
@@ -97,10 +95,10 @@ private class SelectionTool(
                 Dispatchers.UntickedAsync.launch {
                     TemplateManager.saveTemplate(c1, c2, entryId)
                         .onSuccess {
-                            withContext(Dispatchers.Sync) { player.msg("RoomTemplate saved successfully!") }
+                            player.msg("RoomTemplate saved successfully!")
                         }
                         .onFailure {
-                            withContext(Dispatchers.Sync) { player.msg("<red>Failed to save RoomTemplate: ${it.message}</red>") }
+                             player.msg("<red>Failed to save RoomTemplate: ${it.message}</red>")
                         }
                 }
             }
