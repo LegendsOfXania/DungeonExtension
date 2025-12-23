@@ -13,7 +13,7 @@ object TemplateManager {
     suspend fun saveTemplate(
         corner1: Location,
         corner2: Location,
-        entryId: String
+        entry: RoomTemplateEntry
     ): Result<Unit> {
         val structureManager = server.structureManager
         val structure = structureManager.createStructure().also { it.fill(corner1, corner2, true) }
@@ -23,17 +23,11 @@ object TemplateManager {
             out.toByteArray()
         }
 
-        val entry = Query.findById<RoomTemplateEntry>(entryId)
-            ?: return Result.failure(NullPointerException("RoomTemplate entry with id $entryId not found"))
-
         entry.binaryData(bytes)
         return Result.success(Unit)
     }
 
-    suspend fun loadTemplate(entryId: String) : Structure? {
-        val entry = Query.findById<RoomTemplateEntry>(entryId)
-            ?: return null
-
+    suspend fun loadTemplate(entry: RoomTemplateEntry) : Structure? {
         if (entry.hasData()) {
             val inputStream = entry.binaryData()?.inputStream() ?: return null
             return server.structureManager.loadStructure(inputStream)

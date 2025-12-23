@@ -1,6 +1,8 @@
 package fr.legendsofxania.dungeon.interactions.content
 
+import com.typewritermc.core.entries.Query
 import com.typewritermc.core.utils.UntickedAsync
+import com.typewritermc.core.utils.failure
 import com.typewritermc.core.utils.launch
 import com.typewritermc.core.utils.ok
 import com.typewritermc.engine.paper.content.ContentComponent
@@ -10,6 +12,7 @@ import com.typewritermc.engine.paper.content.components.*
 import com.typewritermc.engine.paper.content.entryId
 import com.typewritermc.engine.paper.utils.asMini
 import com.typewritermc.engine.paper.utils.msg
+import fr.legendsofxania.dungeon.entries.static.template.RoomTemplateEntry
 import fr.legendsofxania.dungeon.managers.TemplateManager
 import io.papermc.paper.datacomponent.DataComponentTypes
 import io.papermc.paper.datacomponent.item.ItemLore
@@ -32,7 +35,11 @@ class RoomTemplateContentMode(
             progress = 1f
         }
 
-        +SelectionTool(context.entryId ?: error("No entryId in context"))
+        val entryId = context.entryId
+            ?: return failure("Entry ID not found in context.")
+        val entry = Query.findById<RoomTemplateEntry>(entryId)
+            ?: return failure("RoomTemplateEntry not found for ID: $entryId")
+        +SelectionTool(entry)
 
         exit()
         return ok(Unit)
@@ -41,7 +48,7 @@ class RoomTemplateContentMode(
 
 @Suppress("UnstableApiUsage")
 private class SelectionTool(
-    private val entryId: String
+    private val entry: RoomTemplateEntry
 ) : ContentComponent, ItemComponent {
 
     private var corner1: Location? = null
@@ -93,7 +100,7 @@ private class SelectionTool(
                 }
 
                 Dispatchers.UntickedAsync.launch {
-                    TemplateManager.saveTemplate(c1, c2, entryId)
+                    TemplateManager.saveTemplate(c1, c2, entry)
                         .onSuccess {
                             player.msg("RoomTemplate saved successfully!")
                         }

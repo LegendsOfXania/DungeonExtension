@@ -57,9 +57,10 @@ object StructureManager {
         entry: RoomDefinitionEntry,
         location: Location
     ) {
-        val templateId = entry.template.get(player, context).id
-        val structure = TemplateManager.loadTemplate(templateId)
-            ?: error("Structure not found for RoomTemplate: $templateId")
+        val template = entry.template.get(player, context).entry
+            ?: error("RoomTemplateEntry not found for RoomDefinitionEntry: $entry")
+        val structure = TemplateManager.loadTemplate(template)
+            ?: error("Structure not found for RoomTemplate: $template")
 
         val direction = entry.direction.get(player, context)
         val roomLocation = location.clone().add(direction.getOffset(structure.size))
