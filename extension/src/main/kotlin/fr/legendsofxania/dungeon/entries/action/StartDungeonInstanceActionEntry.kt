@@ -3,6 +3,7 @@ package fr.legendsofxania.dungeon.entries.action
 import com.typewritermc.core.books.pages.Colors
 import com.typewritermc.core.entries.Ref
 import com.typewritermc.core.entries.emptyRef
+import com.typewritermc.core.entries.priority
 import com.typewritermc.core.extension.annotations.Entry
 import com.typewritermc.core.extension.annotations.Help
 import com.typewritermc.engine.paper.entry.Criteria
@@ -10,8 +11,10 @@ import com.typewritermc.engine.paper.entry.Modifier
 import com.typewritermc.engine.paper.entry.TriggerableEntry
 import com.typewritermc.engine.paper.entry.entries.ActionEntry
 import com.typewritermc.engine.paper.entry.entries.ActionTrigger
+import com.typewritermc.engine.paper.entry.entries.EventTrigger
 import com.typewritermc.engine.paper.entry.entries.GroupEntry
 import fr.legendsofxania.dungeon.entries.manifest.definition.DungeonDefinitionEntry
+import fr.legendsofxania.dungeon.interactions.dungeon.DungeonStartTrigger
 
 @Entry(
     "start_dungeon_instance_action",
@@ -37,6 +40,14 @@ class StartDungeonInstanceActionEntry(
     @Help("The DungeonDefinition to use for the DungeonInstance.")
     val dungeon: Ref<DungeonDefinitionEntry> = emptyRef()
 ) : ActionEntry {
-    // TODO: Implement the Interaction Logic
+    override val eventTriggers: List<EventTrigger>
+        get() = listOf(
+            DungeonStartTrigger(
+                this.priority,
+                super.eventTriggers,
+                this
+            )
+        )
+
     override fun ActionTrigger.execute() {}
 }
