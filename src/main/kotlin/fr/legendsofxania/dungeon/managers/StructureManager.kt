@@ -9,7 +9,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.bukkit.Location
 import org.bukkit.Material
-import org.bukkit.World
 import org.bukkit.block.structure.Mirror
 import org.bukkit.block.structure.StructureRotation
 import org.bukkit.entity.Player
@@ -42,7 +41,8 @@ object StructureManager {
         ref: Ref<RoomDefinitionEntry>,
         location: Location
     ) {
-        val entry = ref.entry ?: error("Room entry not found for $ref")
+        val entry = ref.entry
+            ?: error("RoomDefinitionEntry not found for ref: $ref")
 
         placeRoom(player, context, entry, location)
 
@@ -80,22 +80,24 @@ object StructureManager {
     suspend fun deleteRooms(instance: DungeonInstance) {
         if (instance.rooms.isEmpty()) return
 
-        val world = instance.location.world
-
         withContext(Dispatchers.Sync) {
             instance.rooms.forEach { room ->
-                deleteRoom(room.boundingBox, world)
+                deleteRoom(room.boundingBox)
             }
         }
     }
 
-    private fun deleteRoom(box: BoundingBox, world: World) {
+    private fun deleteRoom(box: BoundingBox) {
+        val world = WorldManager.getWorld()
+            ?: error("Dungeon world not found.")
+
         val minX = box.minX.toInt()
         val maxX = box.maxX.toInt()
         val minY = box.minY.toInt().coerceIn(world.minHeight, world.maxHeight)
         val maxY = box.maxY.toInt().coerceIn(world.minHeight, world.maxHeight)
         val minZ = box.minZ.toInt()
         val maxZ = box.maxZ.toInt()
+
 
         for (x in minX..maxX) {
             for (z in minZ..maxZ) {
