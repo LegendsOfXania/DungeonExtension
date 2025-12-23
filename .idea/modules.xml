@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/DungeonExtension.iml" filepath="$PROJECT_DIR$/.idea/DungeonExtension.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fr.legendsofxania.DungeonExtension.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fr.legendsofxania.DungeonExtension.main.iml" />
     </modules>
   </component>
 </project>
