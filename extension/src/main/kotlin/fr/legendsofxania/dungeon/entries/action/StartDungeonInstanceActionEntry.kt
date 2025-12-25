@@ -14,7 +14,7 @@ import com.typewritermc.engine.paper.entry.entries.ActionTrigger
 import com.typewritermc.engine.paper.entry.entries.EventTrigger
 import com.typewritermc.engine.paper.entry.entries.GroupEntry
 import fr.legendsofxania.dungeon.entries.manifest.definition.DungeonDefinitionEntry
-import fr.legendsofxania.dungeon.interactions.dungeon.DungeonStartTrigger
+import fr.legendsofxania.dungeon.interactions.dungeon.trigger.DungeonStartTrigger
 
 @Entry(
     "start_dungeon_instance_action",

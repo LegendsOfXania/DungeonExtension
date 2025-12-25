@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Update files again again">
-      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonTriggerHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Start working on the interaction for the third time">
+      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/static/variable/RelativeRoomPositionVariableEntry.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/trigger/DungeonStartTrigger.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/trigger/DungeonStopTrigger.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/InstanceManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/action/StartDungeonInstanceActionEntry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/action/StartDungeonInstanceActionEntry.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/content/RoomTemplateContentMode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/content/RoomTemplateContentMode.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonInteraction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonInteraction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/StructureManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/StructureManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/TemplateManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/TemplateManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonTriggerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/trigger/DungeonTriggerHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/DungeonInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/DungeonInstance.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/RoomInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/RoomInstance.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +66,7 @@
     &quot;accountId&quot;: &quot;7ef6cf20-c95c-42af-babd-bef8e3cdf07b&quot;
   }
 }</component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$/extension" gradleHome="C:\Users\dhaus\.gradle\wrapper\dists\gradle-9.0-bin\3czi7dcr1pf879blyy9qczdy7\gradle-9.0.0" javaHome="C:\Users\dhaus\.jdks\temurin-21.0.8" gradleVersion="9.0.0" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -79,12 +82,28 @@
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dhaus/Documents/Code/Java/Plugins&quot;
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dhaus/Documents/Code/Java/Plugins&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="fr.legendsofxania.dungeon.interactions.dungeon.trigger" />
+      <recent name="fr.legendsofxania.dungeon.interactions.dungeon" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="" />
@@ -117,14 +136,43 @@
       <option name="project" value="LOCAL" />
       <updated>1766482590942</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update Managers">
+      <option name="closed" value="true" />
+      <created>1766532998915</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1766532998915</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Start working on the interaction for the third time">
+      <option name="closed" value="true" />
+      <created>1766533018876</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1766533018876</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update files" />
     <MESSAGE value="Update files again" />
     <MESSAGE value="Update files again again" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update files again again" />
+    <MESSAGE value="Update Managers" />
+    <MESSAGE value="Start working on the interaction for the third time" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start working on the interaction for the third time" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/InstanceManager.kt</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
