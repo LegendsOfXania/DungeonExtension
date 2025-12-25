@@ -1,10 +1,11 @@
-package fr.legendsofxania.dungeon.interactions.dungeon
+package fr.legendsofxania.dungeon.interactions.dungeon.trigger
 
 import com.typewritermc.core.extension.annotations.Singleton
 import com.typewritermc.core.interaction.Interaction
 import com.typewritermc.engine.paper.entry.entries.Event
 import com.typewritermc.engine.paper.interaction.TriggerContinuation
 import com.typewritermc.engine.paper.interaction.TriggerHandler
+import fr.legendsofxania.dungeon.interactions.dungeon.DungeonInteraction
 
 @Singleton
 class DungeonTriggerHandler : TriggerHandler {
@@ -42,7 +43,7 @@ class DungeonTriggerHandler : TriggerHandler {
                 event.context,
                 trigger.priority,
                 trigger.eventTriggers,
-                trigger.ref
+                trigger.entry
             )
         )
     }
