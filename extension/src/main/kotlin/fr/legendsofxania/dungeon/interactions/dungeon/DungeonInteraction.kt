@@ -8,7 +8,6 @@ import fr.legendsofxania.dungeon.entries.action.StartDungeonInstanceActionEntry
 import org.bukkit.entity.Player
 import java.time.Duration
 
-
 class DungeonInteraction(
     val player: Player,
     override val context: InteractionContext,
@@ -27,18 +26,6 @@ class DungeonInteraction(
     }
 
     override suspend fun teardown() {
+
     }
-
-}
-
-data class DungeonStartTrigger(
-    val priority: Int,
-    val eventTriggers: List<EventTrigger> = emptyList(),
-    val entry: StartDungeonInstanceActionEntry
-) : EventTrigger {
-    override val id = "dungeon.start"
-}
-
-data object DungeonStopTrigger : EventTrigger {
-    override val id = "dungeon.stop"
 }
