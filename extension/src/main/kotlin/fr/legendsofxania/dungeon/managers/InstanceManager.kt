@@ -12,7 +12,7 @@ import java.util.UUID
 
 @Singleton
 class InstanceManager {
-    val instances = mutableSetOf<DungeonInstance>()
+    private val instances = mutableMapOf<UUID, DungeonInstance>()
 
     fun startDungeonInstance(
         definition: Ref<DungeonDefinitionEntry>,
@@ -22,16 +22,20 @@ class InstanceManager {
             UUID.randomUUID(),
             definition,
             location,
-            mutableListOf()
+            mutableMapOf()
         )
 
-        instances.add(dungeonInstance)
+        instances[dungeonInstance.id] = dungeonInstance
 
         return dungeonInstance
     }
 
+    fun getDungeonInstance(id: UUID): DungeonInstance? {
+        return instances[id]
+    }
+
     fun stopDungeonInstance(dungeonInstance: DungeonInstance) {
-        instances.remove(dungeonInstance)
+        instances.remove(dungeonInstance.id)
     }
 
     fun startRoomInstance(
@@ -45,8 +49,22 @@ class InstanceManager {
             boundingBox
         )
 
-        dungeonInstance.rooms.add(roomInstance)
+        dungeonInstance.rooms[roomInstance.id] = roomInstance
 
         return roomInstance
+    }
+
+    fun getRoomInstance(
+        dungeonInstance: DungeonInstance,
+        roomId: UUID
+    ): RoomInstance? {
+        return dungeonInstance.rooms[roomId]
+    }
+
+    fun getRoomInstance(
+        dungeonInstance: DungeonInstance,
+        definition: Ref<RoomDefinitionEntry>
+    ): RoomInstance? {
+        return dungeonInstance.rooms.values.find { it.definition == definition }
     }
 }

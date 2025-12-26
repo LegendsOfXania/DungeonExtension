@@ -15,8 +15,9 @@ import org.bukkit.entity.Player
 import org.bukkit.util.BoundingBox
 import java.util.Random
 
-object StructureManager {
-
+class StructureManager(
+    private val instanceManager: InstanceManager
+) {
     suspend fun placeRooms(
         player: Player,
         context: InteractionContext,
@@ -83,14 +84,14 @@ object StructureManager {
 
         withContext(Dispatchers.Sync) {
             instance.rooms.forEach { room ->
-                deleteRoom(room.boundingBox)
+                deleteRoom(room.value.boundingBox)
             }
         }
     }
 
     private fun deleteRoom(box: BoundingBox) {
         val world = WorldManager.getWorld()
-            ?: error("Dungeon world not found.")
+            ?: error("Dungeon world not found")
 
         val minX = box.minX.toInt()
         val maxX = box.maxX.toInt()
