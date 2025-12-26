@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Start working on the interaction for the third time">
+    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Start working on a new InstanceManager">
       <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/static/variable/RelativeRoomPositionVariableEntry.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/trigger/DungeonStartTrigger.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/trigger/DungeonStopTrigger.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/InstanceManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/PlayerManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/utils/PersistentDataContainer.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/action/StartDungeonInstanceActionEntry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/action/StartDungeonInstanceActionEntry.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonInteraction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonInteraction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonTriggerHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/trigger/DungeonTriggerHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/DungeonInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/DungeonInstance.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/RoomInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/RoomInstance.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/InstanceManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/InstanceManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/StructureManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/StructureManager.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +44,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -152,7 +150,47 @@
       <option name="project" value="LOCAL" />
       <updated>1766533018876</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update Interaction package">
+      <option name="closed" value="true" />
+      <created>1766623849407</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1766623849407</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update Interaction package again because I forgot some files">
+      <option name="closed" value="true" />
+      <created>1766623893128</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1766623893128</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update Interaction package again because I forgot a file AGAIN">
+      <option name="closed" value="true" />
+      <created>1766623913248</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1766623913248</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update Instances">
+      <option name="closed" value="true" />
+      <created>1766623920826</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1766623920826</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Start working on a new InstanceManager">
+      <option name="closed" value="true" />
+      <created>1766623939724</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1766623939724</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -161,18 +199,12 @@
     <MESSAGE value="Update files again again" />
     <MESSAGE value="Update Managers" />
     <MESSAGE value="Start working on the interaction for the third time" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start working on the interaction for the third time" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/InstanceManager.kt</url>
-          <line>30</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Update Interaction package" />
+    <MESSAGE value="Update Interaction package again because I forgot some files" />
+    <MESSAGE value="Update Interaction package again because I forgot a file AGAIN" />
+    <MESSAGE value="Update Instances" />
+    <MESSAGE value="Start working on a new InstanceManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start working on a new InstanceManager" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

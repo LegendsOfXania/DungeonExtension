@@ -9,5 +9,5 @@ data class DungeonInstance(
     val id: UUID,
     val definition: Ref<DungeonDefinitionEntry>,
     val location: Location,
-    val rooms: MutableList<RoomInstance>
+    val rooms: MutableMap<UUID, RoomInstance>
 )
