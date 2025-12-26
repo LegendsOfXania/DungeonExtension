@@ -6,7 +6,7 @@ import org.bukkit.entity.Player
 import org.bukkit.event.HandlerList
 import org.bukkit.event.player.PlayerEvent
 
-class AsyncOnPlayerLeaveRoomInstanceEvent(
+class AsyncPlayerJoinRoomInstanceEvent(
     player: Player,
     val definition: Ref<RoomDefinitionEntry>
 ) : PlayerEvent(player, true) {

@@ -6,7 +6,7 @@ import org.bukkit.entity.Player
 import org.bukkit.event.HandlerList
 import org.bukkit.event.player.PlayerEvent
 
-class AsyncOnPlayerLeaveDungeonInstanceEvent(
+class AsyncPlayerLeaveDungeonInstanceEvent(
     player: Player,
     val definition: Ref<DungeonDefinitionEntry>
 ) : PlayerEvent(player, true) {

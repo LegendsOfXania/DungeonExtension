@@ -1,14 +1,14 @@
 package fr.legendsofxania.dungeon.events
 
 import com.typewritermc.core.entries.Ref
-import fr.legendsofxania.dungeon.entries.manifest.definition.DungeonDefinitionEntry
+import fr.legendsofxania.dungeon.entries.manifest.definition.RoomDefinitionEntry
 import org.bukkit.entity.Player
 import org.bukkit.event.HandlerList
 import org.bukkit.event.player.PlayerEvent
 
-class AsyncOnPlayerJoinDungeonInstanceEvent(
+class AsyncPlayerLeaveRoomInstanceEvent(
     player: Player,
-    val definition: Ref<DungeonDefinitionEntry>
+    val definition: Ref<RoomDefinitionEntry>
 ) : PlayerEvent(player, true) {
 
     companion object {
