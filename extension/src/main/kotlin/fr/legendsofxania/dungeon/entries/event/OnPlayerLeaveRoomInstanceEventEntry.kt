@@ -11,7 +11,7 @@ import com.typewritermc.engine.paper.entry.TriggerableEntry
 import com.typewritermc.engine.paper.entry.entries.EventEntry
 import com.typewritermc.engine.paper.entry.triggerAllFor
 import fr.legendsofxania.dungeon.entries.manifest.definition.RoomDefinitionEntry
-import fr.legendsofxania.dungeon.events.AsyncOnPlayerLeaveRoomInstanceEvent
+import fr.legendsofxania.dungeon.events.AsyncPlayerLeaveRoomInstanceEvent
 
 @Entry(
     "on_player_leave_room_instance_event",
@@ -35,7 +35,7 @@ class OnPlayerLeaveRoomInstanceEventEntry(
 
 @EntryListener(OnPlayerLeaveRoomInstanceEventEntry::class)
 fun onPlayerLeaveRoomInstanceEventListener(
-    event: AsyncOnPlayerLeaveRoomInstanceEvent,
+    event: AsyncPlayerLeaveRoomInstanceEvent,
     query: Query<OnPlayerLeaveRoomInstanceEventEntry>
 ) {
     query.findWhere { it.definition == event.definition }.triggerAllFor(event.player, context())

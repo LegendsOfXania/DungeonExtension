@@ -11,7 +11,7 @@ import com.typewritermc.engine.paper.entry.TriggerableEntry
 import com.typewritermc.engine.paper.entry.entries.EventEntry
 import com.typewritermc.engine.paper.entry.triggerAllFor
 import fr.legendsofxania.dungeon.entries.manifest.definition.RoomDefinitionEntry
-import fr.legendsofxania.dungeon.events.AsyncOnPlayerJoinRoomInstanceEvent
+import fr.legendsofxania.dungeon.events.AsyncPlayerJoinRoomInstanceEvent
 
 @Entry(
     "on_player_join_room_instance_event",
@@ -35,7 +35,7 @@ class OnPlayerJoinRoomInstanceEventEntry(
 
 @EntryListener(OnPlayerJoinRoomInstanceEventEntry::class)
 fun onPlayerJoinRoomInstanceEventListener(
-    event: AsyncOnPlayerJoinRoomInstanceEvent,
+    event: AsyncPlayerJoinRoomInstanceEvent,
     query: Query<OnPlayerJoinRoomInstanceEventEntry>
 ) {
     query.findWhere { it.definition == event.definition }.triggerAllFor(event.player, context())
