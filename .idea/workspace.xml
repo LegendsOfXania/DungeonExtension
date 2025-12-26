@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Start working on a new InstanceManager">
-      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/static/variable/RelativeRoomPositionVariableEntry.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/PlayerManager.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/utils/PersistentDataContainer.kt" afterDir="false" />
+    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Create RelativeRoomPositionVariableEntry">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonInteraction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonInteraction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/DungeonInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/DungeonInstance.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/InstanceManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/InstanceManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/StructureManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/StructureManager.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +184,39 @@
       <option name="project" value="LOCAL" />
       <updated>1766623939724</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update DungeonInstance">
+      <option name="closed" value="true" />
+      <created>1766768461729</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1766768461729</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Update InstanceManager">
+      <option name="closed" value="true" />
+      <created>1766768506118</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1766768506118</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Start working on PlayerManager">
+      <option name="closed" value="true" />
+      <created>1766768516936</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1766768516936</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Create RelativeRoomPositionVariableEntry">
+      <option name="closed" value="true" />
+      <created>1766768529372</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1766768529372</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -204,7 +230,11 @@
     <MESSAGE value="Update Interaction package again because I forgot a file AGAIN" />
     <MESSAGE value="Update Instances" />
     <MESSAGE value="Start working on a new InstanceManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start working on a new InstanceManager" />
+    <MESSAGE value="Update DungeonInstance" />
+    <MESSAGE value="Update InstanceManager" />
+    <MESSAGE value="Start working on PlayerManager" />
+    <MESSAGE value="Create RelativeRoomPositionVariableEntry" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create RelativeRoomPositionVariableEntry" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

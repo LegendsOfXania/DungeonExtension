@@ -1,6 +1,7 @@
 package fr.legendsofxania.dungeon.managers
 
 import com.typewritermc.core.entries.Ref
+import com.typewritermc.core.entries.ref
 import com.typewritermc.core.interaction.InteractionContext
 import com.typewritermc.engine.paper.utils.Sync
 import fr.legendsofxania.dungeon.entries.manifest.definition.RoomDefinitionEntry
@@ -29,15 +30,16 @@ class StructureManager(
         val rootEntry = dungeonEntry.child.entry
             ?: error("RoomInstanceEntry not found for ${dungeonEntry.child}")
 
-        placeRoom(player, context, rootEntry, instance.location)
+        placeRoom(player, instance, context, rootEntry, instance.location)
 
         rootEntry.children.forEach { child ->
-            placeRoomsRecursive(player, context, child, instance.location)
+            placeRoomsRecursive(player, instance, context, child, instance.location)
         }
     }
 
     private suspend fun placeRoomsRecursive(
         player: Player,
+        instance: DungeonInstance,
         context: InteractionContext,
         ref: Ref<RoomDefinitionEntry>,
         location: Location
@@ -45,15 +47,16 @@ class StructureManager(
         val entry = ref.entry
             ?: error("RoomDefinitionEntry not found for ref: $ref")
 
-        placeRoom(player, context, entry, location)
+        placeRoom(player, instance, context, entry, location)
 
         entry.children.forEach { child ->
-            placeRoomsRecursive(player, context, child, location)
+            placeRoomsRecursive(player, instance, context, child, location)
         }
     }
 
     private suspend fun placeRoom(
         player: Player,
+        dungeonInstance: DungeonInstance,
         context: InteractionContext,
         entry: RoomDefinitionEntry,
         location: Location
@@ -77,6 +80,22 @@ class StructureManager(
                 Random()
             )
         }
+
+        val size = structure.size
+        val boundingBox = BoundingBox(
+            roomLocation.x,
+            roomLocation.y,
+            roomLocation.z,
+            roomLocation.x + size.x,
+            roomLocation.y + size.y,
+            roomLocation.z + size.z
+        )
+
+        instanceManager.startRoomInstance(
+            dungeonInstance,
+            entry.ref(),
+            boundingBox
+        )
     }
 
     suspend fun deleteRooms(instance: DungeonInstance) {
