@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Create RelativeRoomPositionVariableEntry">
+    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Update events' names (in the EventEntries)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/StructureManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/StructureManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonInteraction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonInteraction.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +216,31 @@
       <option name="project" value="LOCAL" />
       <updated>1766768529372</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="StructureManager now create RoomInstances">
+      <option name="closed" value="true" />
+      <created>1766769253076</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1766769253076</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Update events' names">
+      <option name="closed" value="true" />
+      <created>1766769754033</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1766769754033</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Update events' names (in the EventEntries)">
+      <option name="closed" value="true" />
+      <created>1766769771338</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1766769771338</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -234,7 +258,10 @@
     <MESSAGE value="Update InstanceManager" />
     <MESSAGE value="Start working on PlayerManager" />
     <MESSAGE value="Create RelativeRoomPositionVariableEntry" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create RelativeRoomPositionVariableEntry" />
+    <MESSAGE value="StructureManager now create RoomInstances" />
+    <MESSAGE value="Update events' names" />
+    <MESSAGE value="Update events' names (in the EventEntries)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update events' names (in the EventEntries)" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
