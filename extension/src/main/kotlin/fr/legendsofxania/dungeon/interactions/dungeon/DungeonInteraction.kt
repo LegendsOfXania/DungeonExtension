@@ -34,7 +34,7 @@ class DungeonInteraction(
     private val dungeonInstance = instanceManager.startDungeonInstance(dungeonEntry, dungeonLocation)
 
     override suspend fun initialize(): Result<Unit> {
-        StructureManager(instanceManager).placeRooms(player, context, dungeonInstance)
+        StructureManager(instanceManager).placeRooms(player, dungeonInstance)
         PlayerManager(instanceManager).setDungeonInstance(player, dungeonInstance)
 
         val world = dungeonLocation.world

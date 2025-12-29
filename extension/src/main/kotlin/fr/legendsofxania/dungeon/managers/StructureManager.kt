@@ -2,7 +2,7 @@ package fr.legendsofxania.dungeon.managers
 
 import com.typewritermc.core.entries.Ref
 import com.typewritermc.core.entries.ref
-import com.typewritermc.core.interaction.InteractionContext
+import com.typewritermc.engine.paper.interaction.interactionContext
 import com.typewritermc.engine.paper.utils.Sync
 import fr.legendsofxania.dungeon.entries.manifest.definition.RoomDefinitionEntry
 import fr.legendsofxania.dungeon.interactions.dungeon.instances.DungeonInstance
@@ -21,7 +21,6 @@ class StructureManager(
 ) {
     suspend fun placeRooms(
         player: Player,
-        context: InteractionContext,
         instance: DungeonInstance
     ) {
         val dungeonEntry = instance.definition.entry
@@ -30,43 +29,41 @@ class StructureManager(
         val rootEntry = dungeonEntry.child.entry
             ?: error("RoomInstanceEntry not found for ${dungeonEntry.child}")
 
-        placeRoom(player, instance, context, rootEntry, instance.location)
+        placeRoom(player, instance, rootEntry, instance.location)
 
         rootEntry.children.forEach { child ->
-            placeRoomsRecursive(player, instance, context, child, instance.location)
+            placeRoomsRecursive(player, instance, child, instance.location)
         }
     }
 
     private suspend fun placeRoomsRecursive(
         player: Player,
         instance: DungeonInstance,
-        context: InteractionContext,
         ref: Ref<RoomDefinitionEntry>,
         location: Location
     ) {
         val entry = ref.entry
             ?: error("RoomDefinitionEntry not found for ref: $ref")
 
-        placeRoom(player, instance, context, entry, location)
+        placeRoom(player, instance, entry, location)
 
         entry.children.forEach { child ->
-            placeRoomsRecursive(player, instance, context, child, location)
+            placeRoomsRecursive(player, instance, child, location)
         }
     }
 
     private suspend fun placeRoom(
         player: Player,
         dungeonInstance: DungeonInstance,
-        context: InteractionContext,
         entry: RoomDefinitionEntry,
         location: Location
     ) {
-        val template = entry.template.get(player, context).entry
+        val template = entry.template.get(player, player.interactionContext).entry
             ?: error("RoomTemplateEntry not found for RoomDefinitionEntry: $entry")
         val structure = TemplateManager.loadTemplate(template)
             ?: error("Structure not found for RoomTemplate: $template")
 
-        val direction = entry.direction.get(player, context)
+        val direction = entry.direction.get(player, player.interactionContext)
         val roomLocation = location.clone().add(direction.getOffset(structure.size))
 
         withContext(Dispatchers.Sync) {
