@@ -1,6 +1,10 @@
 package fr.legendsofxania.dungeon.managers
 
+import com.typewritermc.core.entries.Ref
+import com.typewritermc.engine.paper.interaction.interactionContext
 import com.typewritermc.engine.paper.plugin
+import fr.legendsofxania.dungeon.entries.manifest.definition.DungeonDefinitionEntry
+import fr.legendsofxania.dungeon.entries.manifest.definition.RoomDefinitionEntry
 import fr.legendsofxania.dungeon.interactions.dungeon.instances.DungeonInstance
 import fr.legendsofxania.dungeon.interactions.dungeon.instances.RoomInstance
 import fr.legendsofxania.dungeon.utils.UUIDDataType
@@ -26,6 +30,13 @@ class PlayerManager(
         return instanceManager.getDungeonInstance(dungeonInstanceId)
     }
 
+    fun checkDungeonInstance(player: Player, dungeon: Ref<DungeonDefinitionEntry>): Boolean {
+        val dungeonInstance = getDungeonInstance(player)
+
+        return if (dungeon.isSet) dungeonInstance?.definition == dungeon
+        else dungeonInstance != null
+    }
+
     fun removeDungeonInstance(player: Player) {
         player.persistentDataContainer.remove(dungeonKey)
     }
@@ -43,6 +54,13 @@ class PlayerManager(
         val dungeonInstance = getDungeonInstance(player) ?: return null
 
         return dungeonInstance.rooms[roomInstanceId]
+    }
+
+    fun checkRoomInstance(player: Player, room: Ref<RoomDefinitionEntry>): Boolean {
+        val roomInstance = getRoomInstance(player)
+
+        return if (room.isSet) roomInstance?.definition == room
+        else roomInstance != null
     }
 
     fun removeRoomInstance(player: Player) {
