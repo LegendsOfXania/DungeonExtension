@@ -5,7 +5,6 @@ import com.typewritermc.core.entries.Ref
 import com.typewritermc.core.entries.emptyRef
 import com.typewritermc.core.entries.ref
 import com.typewritermc.core.extension.annotations.Entry
-import com.typewritermc.engine.paper.entry.entries.AudienceEntry
 import com.typewritermc.engine.paper.entry.entries.AudienceFilter
 import com.typewritermc.engine.paper.entry.entries.AudienceFilterEntry
 import com.typewritermc.engine.paper.entry.entries.ConstVar
@@ -23,8 +22,8 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 @Entry(
-    "in_room_audience",
-    "Return if a player is in a RoomInstance or not.",
+    "in_dungeon_audience",
+    "Return if a player is in a DungeonInstance or not.",
     Colors.GREEN,
     "tabler:building"
 )
@@ -38,34 +37,25 @@ import org.koin.core.component.inject
 class InDungeonAudienceEntry(
     override val id: String = "",
     override val name: String = "",
-    override val children: List<Ref<out AudienceEntry>> = emptyList(),
+    override val children: List<Ref<out AudienceFilterEntry>> = emptyList(),
     val dungeon: Var<Ref<DungeonDefinitionEntry>> = ConstVar(emptyRef()),
     override val inverted: Boolean = false
 ) : AudienceFilterEntry, Invertible {
-    override suspend fun display(): AudienceFilter = InDungeonAudienceFilter(ref(), dungeon)
+    override suspend fun display() = InDungeonAudienceFilter(ref(), dungeon)
 }
 
 class InDungeonAudienceFilter(
     ref: Ref<out AudienceFilterEntry>,
-    val dungeon: Var<Ref<DungeonDefinitionEntry>>
+    private val dungeon: Var<Ref<DungeonDefinitionEntry>>
 ) : AudienceFilter(ref), KoinComponent {
     private val instanceManager: InstanceManager by inject()
 
-    override fun filter(player: Player): Boolean {
-        val targetDungeon = dungeon.get(player, player.interactionContext)
-        val dungeonInstance = PlayerManager(instanceManager).getDungeonInstance(player)
-
-        return if (targetDungeon.isSet) dungeonInstance?.definition == targetDungeon
-        else dungeonInstance != null
-    }
+    override fun filter(player: Player): Boolean =
+        PlayerManager(instanceManager).checkDungeonInstance(player, dungeon.get(player, player.interactionContext))
 
     @EventHandler
-    fun onPlayerJoinDungeonInstance(event: AsyncPlayerJoinDungeonInstanceEvent) {
-        event.player.refresh()
-    }
+    fun onPlayerJoinDungeonInstance(event: AsyncPlayerJoinDungeonInstanceEvent) = event.player.refresh()
 
     @EventHandler
-    fun onPlayerLeaveDungeonInstance(event: AsyncPlayerLeaveDungeonInstanceEvent) {
-        event.player.refresh()
-    }
+    fun onPlayerLeaveDungeonInstance(event: AsyncPlayerLeaveDungeonInstanceEvent) = event.player.refresh()
 }

@@ -23,8 +23,8 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 @Entry(
-    "in_dungeon_audience",
-    "Return if a player is in a DungeonInstance or not.",
+    "in_room_audience",
+    "Return if a player is in a RoomInstance or not.",
     Colors.GREEN,
     "tabler:building-arch"
 )
@@ -33,7 +33,7 @@ import org.koin.core.component.inject
  *
  * ## How could this be used?
  *
- * This could be used to apply effects to players who are in a dungeon.
+ * This could be used to apply effects to players who are in a room.
  */
 class InRoomAudienceEntry(
     override val id: String = "",
@@ -51,21 +51,12 @@ class InRoomAudienceFilter(
 ) : AudienceFilter(ref), KoinComponent {
     private val instanceManager: InstanceManager by inject()
 
-    override fun filter(player: Player): Boolean {
-        val targetRoom = room.get(player, player.interactionContext)
-        val roomInstance = PlayerManager(instanceManager).getRoomInstance(player)
-
-        return if (targetRoom.isSet) roomInstance?.definition == targetRoom
-        else roomInstance != null
-    }
+    override fun filter(player: Player): Boolean =
+        PlayerManager(instanceManager).checkRoomInstance(player, room.get(player, player.interactionContext))
 
     @EventHandler
-    fun onPlayerJoinRoomInstance(event: AsyncPlayerJoinRoomInstanceEvent) {
-        event.player.refresh()
-    }
+    fun onPlayerJoinRoomInstance(event: AsyncPlayerJoinRoomInstanceEvent) = event.player.refresh()
 
     @EventHandler
-    fun onPlayerLeaveRoomInstance(event: AsyncPlayerLeaveRoomInstanceEvent) {
-        event.player.refresh()
-    }
+    fun onPlayerLeaveRoomInstance(event: AsyncPlayerLeaveRoomInstanceEvent) = event.player.refresh()
 }
