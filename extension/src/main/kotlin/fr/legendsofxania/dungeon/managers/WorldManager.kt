@@ -1,7 +1,11 @@
 package fr.legendsofxania.dungeon.managers
 
 import com.typewritermc.engine.paper.plugin
+import com.typewritermc.engine.paper.utils.Sync
 import com.typewritermc.engine.paper.utils.config
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import org.bukkit.Location
 import org.bukkit.NamespacedKey
 import org.bukkit.World
@@ -26,7 +30,7 @@ object WorldManager {
     private var nextIndex = 0
 
     fun startDungeon(): Location {
-        val world = getWorld() ?: createWorld()
+        val world = getWorld() ?: runBlocking { withContext(Dispatchers.Sync) { createWorld() } }
         ?: throw IllegalStateException("Failed to create or retrieve the dungeon world.")
 
         val index = if (freeIndexes.isNotEmpty()) {
