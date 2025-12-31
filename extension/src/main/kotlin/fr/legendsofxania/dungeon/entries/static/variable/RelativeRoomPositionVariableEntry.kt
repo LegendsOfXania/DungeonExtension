@@ -7,6 +7,7 @@ import com.typewritermc.core.extension.annotations.Entry
 import com.typewritermc.core.extension.annotations.VariableData
 import com.typewritermc.core.extension.annotations.WithRotation
 import com.typewritermc.core.utils.point.Coordinate
+import com.typewritermc.core.utils.point.toCoordinate
 import com.typewritermc.core.utils.point.toPosition
 import com.typewritermc.engine.paper.entry.entries.ConstVar
 import com.typewritermc.engine.paper.entry.entries.Var
@@ -63,7 +64,7 @@ class RelativeRoomPositionVariableEntry(
         val origin = roomInstance.boundingBox.min.toLocation(world).toPosition()
 
         @Suppress("UNCHECKED_CAST")
-        return origin.add(position) as T
+        return origin.add(position).toCoordinate() as T
     }
 }
 
