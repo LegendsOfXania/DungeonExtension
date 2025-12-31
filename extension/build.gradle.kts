@@ -22,7 +22,7 @@ typewriter {
             intuitive tool that helps you design immersive rooms and 
             adventures quickly and creatively, saving you time and effort.
         """.trimIndent()
-        engineVersion = "0.9.0-beta-167"
+        engineVersion = "0.9.0-beta-170"
         channel = com.typewritermc.moduleplugin.ReleaseChannel.BETA
 
         paper()

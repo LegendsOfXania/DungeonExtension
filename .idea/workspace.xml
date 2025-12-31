@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Add InDungeonAudienceEntry &amp; InRoomAudienceEntry">
-      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/static/facts/InDungeonFactEntry.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/static/facts/InRoomFactEntry.kt" afterDir="false" />
+    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Add InDungeonFactEntry &amp; InRoomFactEntry">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/manifest/audience/InDungeonAudienceEntry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/manifest/audience/InDungeonAudienceEntry.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/manifest/audience/InRoomAudienceEntry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/manifest/audience/InRoomAudienceEntry.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/PlayerManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/PlayerManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/extension/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonInteraction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonInteraction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/InstanceManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/InstanceManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/WorldManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/WorldManager.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,12 +25,26 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/extension">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="DungeonExtension" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DungeonExtension" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DungeonExtension" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -73,35 +87,71 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dhaus/Documents/Code/Typewriter/DungeonExtension/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/manifest/audience&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Gradle.extension [build].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/dhaus/Documents/Code/Typewriter/DungeonExtension/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/manifest/audience",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dhaus\Documents\Code\Typewriter\DungeonExtension\extension\src\main\kotlin\fr\legendsofxania\dungeon\entries\manifest\audience" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="fr.legendsofxania.dungeon.entries.static.facts" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
       <recent name="fr.legendsofxania.dungeon.interactions.dungeon.trigger" />
       <recent name="fr.legendsofxania.dungeon.interactions.dungeon" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="extension [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/extension" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.extension [build]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -121,7 +171,8 @@
       <workItem from="1767035269374" duration="2820000" />
       <workItem from="1767038164065" duration="59000" />
       <workItem from="1767038649087" duration="66000" />
-      <workItem from="1767115714754" duration="833000" />
+      <workItem from="1767115714754" duration="2976000" />
+      <workItem from="1767200867701" duration="2241000" />
     </task>
     <task id="LOCAL-00001" summary="Update files">
       <option name="closed" value="true" />
@@ -283,7 +334,31 @@
       <option name="project" value="LOCAL" />
       <updated>1767037638717</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Add checkDungeonInstance() &amp; checkRoomInstance">
+      <option name="closed" value="true" />
+      <created>1767116594471</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1767116594471</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Update AudienceEntries">
+      <option name="closed" value="true" />
+      <created>1767116616053</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1767116616053</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add InDungeonFactEntry &amp; InRoomFactEntry">
+      <option name="closed" value="true" />
+      <created>1767116637974</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1767116637974</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +396,10 @@
     <MESSAGE value="Update interaction" />
     <MESSAGE value="Update StructureManager" />
     <MESSAGE value="Add InDungeonAudienceEntry &amp; InRoomAudienceEntry" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add InDungeonAudienceEntry &amp; InRoomAudienceEntry" />
+    <MESSAGE value="Add checkDungeonInstance() &amp; checkRoomInstance" />
+    <MESSAGE value="Update AudienceEntries" />
+    <MESSAGE value="Add InDungeonFactEntry &amp; InRoomFactEntry" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add InDungeonFactEntry &amp; InRoomFactEntry" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
