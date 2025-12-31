@@ -56,9 +56,9 @@ class InstanceManager {
 
     fun getRoomInstance(
         dungeonInstance: DungeonInstance,
-        roomId: UUID
+        location: Location
     ): RoomInstance? {
-        return dungeonInstance.rooms[roomId]
+        return dungeonInstance.rooms.values.find { it.boundingBox.contains(location.x, location.y, location.z) }
     }
 
     fun getRoomInstance(
