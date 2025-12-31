@@ -56,14 +56,14 @@ private class SelectionTool(
 
     override fun item(player: Player): Pair<Int, IntractableItem> {
         val item = ItemStack(Material.BREEZE_ROD).apply {
-            setData(DataComponentTypes.ITEM_NAME, "<aqua>RoomTemplate Selection Tool</aqua>".asMini())
-            setData(DataComponentTypes.LORE, ItemLore.lore().addLine {
+            setData(DataComponentTypes.ITEM_NAME, "<aqua>RoomTemplate Selection</aqua>".asMini())
+            setData(DataComponentTypes.LORE, ItemLore.lore().addLines(
                 """
-                    <gray><white>Left-click</white> to select the first corner.</gray>
-                    <gray><white>Right-click</white> to select the second corner.</gray>
-                    <gray><white>Shift + Left-click</white> to save the room.</gray>
-                """.trimIndent().asMini()
-            })
+                    </i><gray><white>Left-click</white> to select the first corner.</gray>
+                    </i><gray><white>Right-click</white> to select the second corner.</gray>
+                    </i><gray><white>Shift + Left-click</white> to save the room.</gray>
+                """.trimIndent().lines().map { it.asMini() }
+            ))
         } onInteract { event ->
             val location = event.clickedBlock?.location ?: player.location
             handleInteraction(player, location, event.type)
