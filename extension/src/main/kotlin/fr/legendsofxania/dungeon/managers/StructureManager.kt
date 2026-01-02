@@ -29,10 +29,10 @@ class StructureManager(
         val rootEntry = dungeonEntry.child.entry
             ?: error("RoomInstanceEntry not found for ${dungeonEntry.child}")
 
-        placeRoom(player, instance, rootEntry, instance.location)
+        val rootLocation = placeRoom(player, instance, rootEntry, instance.location)
 
         rootEntry.children.forEach { child ->
-            placeRoomsRecursive(player, instance, child, instance.location)
+            placeRoomsRecursive(player, instance, child, rootLocation)
         }
     }
 
@@ -45,10 +45,10 @@ class StructureManager(
         val entry = ref.entry
             ?: error("RoomDefinitionEntry not found for ref: $ref")
 
-        placeRoom(player, instance, entry, location)
+        val roomLocation = placeRoom(player, instance, entry, location)
 
         entry.children.forEach { child ->
-            placeRoomsRecursive(player, instance, child, location)
+            placeRoomsRecursive(player, instance, child, roomLocation)
         }
     }
 
@@ -57,7 +57,7 @@ class StructureManager(
         dungeonInstance: DungeonInstance,
         entry: RoomDefinitionEntry,
         location: Location
-    ) {
+    ): Location {
         val template = entry.template.get(player, player.interactionContext).entry
             ?: error("RoomTemplateEntry not found for RoomDefinitionEntry: $entry")
         val structure = TemplateManager.loadTemplate(template)
@@ -93,6 +93,8 @@ class StructureManager(
             entry.ref(),
             boundingBox
         )
+
+        return roomLocation
     }
 
     suspend fun deleteRooms(instance: DungeonInstance) {
