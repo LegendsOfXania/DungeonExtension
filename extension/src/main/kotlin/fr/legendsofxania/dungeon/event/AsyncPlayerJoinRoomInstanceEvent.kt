@@ -1,0 +1,20 @@
+package fr.legendsofxania.dungeon.event
+
+import com.typewritermc.core.entries.Ref
+import fr.legendsofxania.dungeon.entry.manifest.definition.RoomDefinitionEntry
+import org.bukkit.entity.Player
+import org.bukkit.event.HandlerList
+import org.bukkit.event.player.PlayerEvent
+
+class AsyncPlayerJoinRoomInstanceEvent(
+    player: Player,
+    val definition: Ref<RoomDefinitionEntry>
+) : PlayerEvent(player, true) {
+
+    companion object {
+        @JvmStatic
+        val handlerList = HandlerList()
+    }
+
+    override fun getHandlers(): HandlerList = handlerList
+}
