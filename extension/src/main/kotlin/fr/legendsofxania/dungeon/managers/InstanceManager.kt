@@ -8,7 +8,7 @@ import fr.legendsofxania.dungeon.interactions.dungeon.instances.DungeonInstance
 import fr.legendsofxania.dungeon.interactions.dungeon.instances.RoomInstance
 import org.bukkit.Location
 import org.bukkit.util.BoundingBox
-import java.util.UUID
+import java.util.*
 
 @Singleton
 class InstanceManager {

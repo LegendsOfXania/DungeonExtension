@@ -9,11 +9,7 @@ import com.typewritermc.core.extension.annotations.WithRotation
 import com.typewritermc.core.utils.point.Coordinate
 import com.typewritermc.core.utils.point.toCoordinate
 import com.typewritermc.core.utils.point.toPosition
-import com.typewritermc.engine.paper.entry.entries.ConstVar
-import com.typewritermc.engine.paper.entry.entries.Var
-import com.typewritermc.engine.paper.entry.entries.VarContext
-import com.typewritermc.engine.paper.entry.entries.VariableEntry
-import com.typewritermc.engine.paper.entry.entries.getData
+import com.typewritermc.engine.paper.entry.entries.*
 import com.typewritermc.engine.paper.utils.toPosition
 import com.typewritermc.engine.paper.utils.toWorld
 import fr.legendsofxania.dungeon.entries.manifest.definition.RoomDefinitionEntry

@@ -57,7 +57,8 @@ private class SelectionTool(
     override fun item(player: Player): Pair<Int, IntractableItem> {
         val item = ItemStack(Material.BREEZE_ROD).apply {
             setData(DataComponentTypes.ITEM_NAME, "<aqua>RoomTemplate Selection</aqua>".asMini())
-            setData(DataComponentTypes.LORE, ItemLore.lore().addLines(
+            setData(
+                DataComponentTypes.LORE, ItemLore.lore().addLines(
                 """
                     </i><gray><white>Left-click</white> to select the first corner.</gray>
                     </i><gray><white>Right-click</white> to select the second corner.</gray>
@@ -105,7 +106,7 @@ private class SelectionTool(
                             player.msg("RoomTemplate saved successfully!")
                         }
                         .onFailure {
-                             player.msg("<red>Failed to save RoomTemplate: ${it.message}</red>")
+                            player.msg("<red>Failed to save RoomTemplate: ${it.message}</red>")
                         }
                 }
             }

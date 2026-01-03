@@ -3,7 +3,7 @@ package fr.legendsofxania.dungeon.interactions.dungeon.instances
 import com.typewritermc.core.entries.Ref
 import fr.legendsofxania.dungeon.entries.manifest.definition.DungeonDefinitionEntry
 import org.bukkit.Location
-import java.util.UUID
+import java.util.*
 
 data class DungeonInstance(
     val id: UUID,

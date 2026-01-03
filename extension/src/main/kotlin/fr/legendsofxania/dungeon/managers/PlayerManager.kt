@@ -1,7 +1,6 @@
 package fr.legendsofxania.dungeon.managers
 
 import com.typewritermc.core.entries.Ref
-import com.typewritermc.engine.paper.interaction.interactionContext
 import com.typewritermc.engine.paper.plugin
 import fr.legendsofxania.dungeon.entries.manifest.definition.DungeonDefinitionEntry
 import fr.legendsofxania.dungeon.entries.manifest.definition.RoomDefinitionEntry

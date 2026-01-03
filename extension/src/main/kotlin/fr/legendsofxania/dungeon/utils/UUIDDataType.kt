@@ -4,7 +4,7 @@ import org.bukkit.persistence.PersistentDataAdapterContext
 import org.bukkit.persistence.PersistentDataType
 import org.jspecify.annotations.NullMarked
 import java.nio.ByteBuffer
-import java.util.UUID
+import java.util.*
 
 @NullMarked
 class UUIDDataType private constructor() : PersistentDataType<ByteArray, UUID> {

@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Update InstanceManager">
+    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="DungeonInteraction V1 !">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/manifest/audience/InDungeonAudienceEntry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/manifest/audience/InDungeonAudienceEntry.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/manifest/audience/InRoomAudienceEntry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/manifest/audience/InRoomAudienceEntry.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/static/variable/RelativeRoomPositionVariableEntry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/static/variable/RelativeRoomPositionVariableEntry.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/content/RoomTemplateContentMode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/content/RoomTemplateContentMode.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonInteraction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/DungeonInteraction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/DungeonInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/DungeonInstance.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/RoomInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interactions/dungeon/instances/RoomInstance.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/InstanceManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/InstanceManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/PlayerManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/PlayerManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/StructureManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/StructureManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/TemplateManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/TemplateManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/WorldManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/managers/WorldManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/utils/UUIDDataType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/utils/UUIDDataType.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,6 +212,9 @@
       <workItem from="1767216927123" duration="2982000" />
       <workItem from="1767294194162" duration="33000" />
       <workItem from="1767377409182" duration="3948000" />
+      <workItem from="1767390581130" duration="141000" />
+      <workItem from="1767392841175" duration="601000" />
+      <workItem from="1767398326723" duration="640000" />
     </task>
     <task id="LOCAL-00001" summary="Update files">
       <option name="closed" value="true" />
@@ -426,7 +440,23 @@
       <option name="project" value="LOCAL" />
       <updated>1767219461593</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Update room placement">
+      <option name="closed" value="true" />
+      <created>1767390682294</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1767390682294</updated>
+    </task>
+    <task id="LOCAL-00030" summary="DungeonInteraction V1 !">
+      <option name="closed" value="true" />
+      <created>1767390706729</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1767390706729</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,8 +474,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update files again again" />
-    <MESSAGE value="Update Managers" />
     <MESSAGE value="Start working on the interaction for the third time" />
     <MESSAGE value="Update Interaction package" />
     <MESSAGE value="Update Interaction package again because I forgot some files" />
@@ -469,7 +497,9 @@
     <MESSAGE value="Fix RelativeRoomPositionVariableEntry" />
     <MESSAGE value="Fix WorldManager" />
     <MESSAGE value="Update InstanceManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update InstanceManager" />
+    <MESSAGE value="Update room placement" />
+    <MESSAGE value="DungeonInteraction V1 !" />
+    <option name="LAST_COMMIT_MESSAGE" value="DungeonInteraction V1 !" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

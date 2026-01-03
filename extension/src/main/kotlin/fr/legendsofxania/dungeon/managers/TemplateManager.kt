@@ -1,6 +1,5 @@
 package fr.legendsofxania.dungeon.managers
 
-import com.typewritermc.core.entries.Query
 import com.typewritermc.engine.paper.entry.entries.binaryData
 import com.typewritermc.engine.paper.entry.entries.hasData
 import com.typewritermc.engine.paper.utils.server
@@ -27,7 +26,7 @@ object TemplateManager {
         return Result.success(Unit)
     }
 
-    suspend fun loadTemplate(entry: RoomTemplateEntry) : Structure? {
+    suspend fun loadTemplate(entry: RoomTemplateEntry): Structure? {
         if (entry.hasData()) {
             val inputStream = entry.binaryData()?.inputStream() ?: return null
             return server.structureManager.loadStructure(inputStream)

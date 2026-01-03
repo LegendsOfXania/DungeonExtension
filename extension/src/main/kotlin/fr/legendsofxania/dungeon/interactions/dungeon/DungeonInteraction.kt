@@ -10,10 +10,7 @@ import com.typewritermc.engine.paper.plugin
 import com.typewritermc.engine.paper.utils.msg
 import com.typewritermc.engine.paper.utils.toBukkitLocation
 import fr.legendsofxania.dungeon.entries.action.StartDungeonInstanceActionEntry
-import fr.legendsofxania.dungeon.events.AsyncPlayerJoinDungeonInstanceEvent
-import fr.legendsofxania.dungeon.events.AsyncPlayerJoinRoomInstanceEvent
-import fr.legendsofxania.dungeon.events.AsyncPlayerLeaveDungeonInstanceEvent
-import fr.legendsofxania.dungeon.events.AsyncPlayerLeaveRoomInstanceEvent
+import fr.legendsofxania.dungeon.events.*
 import fr.legendsofxania.dungeon.interactions.dungeon.trigger.DungeonStopTrigger
 import fr.legendsofxania.dungeon.managers.InstanceManager
 import fr.legendsofxania.dungeon.managers.PlayerManager
@@ -23,9 +20,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import lirand.api.extensions.events.unregister
 import lirand.api.extensions.server.registerSuspendingEvents
+import org.bukkit.Location
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
+import org.bukkit.event.inventory.InventoryCloseEvent
+import org.bukkit.event.inventory.InventoryType
 import org.bukkit.event.player.PlayerMoveEvent
 import org.bukkit.event.player.PlayerTeleportEvent
 import org.koin.core.component.KoinComponent
@@ -33,33 +33,30 @@ import org.koin.core.component.inject
 import java.time.Duration
 
 class DungeonInteraction(
-    val player: Player,
+    private val player: Player,
     override val context: InteractionContext,
     override val priority: Int,
     val eventTriggers: List<EventTrigger>,
     val entry: StartDungeonInstanceActionEntry
 ) : Interaction, Listener, KoinComponent {
     private val instanceManager: InstanceManager by inject()
+    private val playerManager by lazy { PlayerManager(instanceManager) }
+    private val structureManager by lazy { StructureManager(instanceManager) }
 
-    private val dungeonEntry = entry.dungeon
+    private val dungeonDefinition = entry.dungeon
     private val dungeonLocation = WorldManager.startDungeon()
-    private val dungeonInstance = instanceManager.startDungeonInstance(dungeonEntry, dungeonLocation)
+    private val dungeonInstance = instanceManager.startDungeonInstance(dungeonDefinition, dungeonLocation)
 
-    private var lastCheckedPosition: Triple<Int, Int, Int>? = null
+    private var lastPosition: Triple<Int, Int, Int>? = null
 
     override suspend fun initialize(): Result<Unit> {
-        StructureManager(instanceManager).placeRooms(player, dungeonInstance)
-        PlayerManager(instanceManager).setDungeonInstance(player, dungeonInstance)
+        structureManager.placeRooms(player, dungeonInstance)
+        playerManager.setDungeonInstance(player, dungeonInstance)
 
-        val world = dungeonLocation.world
-            ?: error("Dungeon world not found")
-        val coordinate = dungeonEntry.entry?.respawnLocation?.get(player, context)?.toBukkitLocation(world)
-            ?: error("Spawn location not found for DungeonDefinitionEntry: ${dungeonEntry.id}")
-
-        player.teleportAsync(coordinate, PlayerTeleportEvent.TeleportCause.PLUGIN)
+        player.teleportAsync(getSpawnLocation(), PlayerTeleportEvent.TeleportCause.PLUGIN)
 
         plugin.registerSuspendingEvents(this)
-        AsyncPlayerJoinDungeonInstanceEvent(player, dungeonEntry).callEvent()
+        AsyncPlayerJoinDungeonInstanceEvent(player, dungeonDefinition).callEvent()
 
         player.msg("Starting")
         return ok(Unit)
@@ -70,15 +67,15 @@ class DungeonInteraction(
     }
 
     override suspend fun teardown() {
-        PlayerManager(instanceManager).removeDungeonInstance(player)
-        PlayerManager(instanceManager).removeRoomInstance(player)
+        playerManager.removeDungeonInstance(player)
+        playerManager.removeRoomInstance(player)
 
-        StructureManager(instanceManager).deleteRooms(dungeonInstance)
+        structureManager.deleteRooms(dungeonInstance)
         WorldManager.stopDungeon(dungeonLocation)
         instanceManager.stopDungeonInstance(dungeonInstance)
 
         unregister()
-        AsyncPlayerLeaveDungeonInstanceEvent(player, dungeonEntry).callEvent()
+        AsyncPlayerLeaveDungeonInstanceEvent(player, dungeonDefinition).callEvent()
         player.msg("Stopped")
     }
 
@@ -87,24 +84,41 @@ class DungeonInteraction(
         if (event.player != player) return
 
         val to = event.to
-        val position = Triple(to.blockX, to.blockY, to.blockZ)
+        val pos = Triple(to.blockX, to.blockY, to.blockZ)
+        if (pos == lastPosition) return
+        lastPosition = pos
 
-        if (position == lastCheckedPosition) return
-        lastCheckedPosition = position
-
-        val previousRoomInstance = PlayerManager(instanceManager).getRoomInstance(player)
-        val newRoomInstance = instanceManager.getRoomInstance(dungeonInstance, event.to)
+        val prevRoom = playerManager.getRoomInstance(player)
+        val newRoom = instanceManager.getRoomInstance(dungeonInstance, to)
 
         withContext(Dispatchers.UntickedAsync) {
-            if (newRoomInstance != null) {
-                PlayerManager(instanceManager).setRoomInstance(player, newRoomInstance)
-                previousRoomInstance?.let {
-                    AsyncPlayerLeaveRoomInstanceEvent(player, it.definition).callEvent()
-                }
-                AsyncPlayerJoinRoomInstanceEvent(player, newRoomInstance.definition).callEvent()
+            if (newRoom != null) {
+                playerManager.setRoomInstance(player, newRoom)
+                prevRoom?.let { AsyncPlayerLeaveRoomInstanceEvent(player, it.definition).callEvent() }
+                AsyncPlayerJoinRoomInstanceEvent(player, newRoom.definition).callEvent()
             } else {
                 DungeonStopTrigger.triggerFor(player, context)
             }
         }
+    }
+
+    // Some dark magic to handle respawn on Folia #2
+    @EventHandler
+    fun onPlayerRespawn(event: InventoryCloseEvent) {
+        val eventPlayer = event.player as? Player ?: return
+        if (eventPlayer != player) return
+        if (event.inventory.type != InventoryType.CRAFTING) return
+        if (!player.isDead || !player.isOnline || player.health > 0) return
+
+        player.teleportAsync(getSpawnLocation(), PlayerTeleportEvent.TeleportCause.PLUGIN)
+    }
+
+    private fun getSpawnLocation(): Location {
+        val world = dungeonLocation.world
+            ?: error("Dungeon world not found")
+        val location = dungeonDefinition.entry?.respawnLocation?.get(player, context)?.toBukkitLocation(world)
+            ?: error("Spawn location not found for DungeonDefinitionEntry: ${dungeonDefinition.id}")
+
+        return location
     }
 }

@@ -5,11 +5,7 @@ import com.typewritermc.core.entries.Ref
 import com.typewritermc.core.entries.emptyRef
 import com.typewritermc.core.entries.ref
 import com.typewritermc.core.extension.annotations.Entry
-import com.typewritermc.engine.paper.entry.entries.AudienceFilter
-import com.typewritermc.engine.paper.entry.entries.AudienceFilterEntry
-import com.typewritermc.engine.paper.entry.entries.ConstVar
-import com.typewritermc.engine.paper.entry.entries.Invertible
-import com.typewritermc.engine.paper.entry.entries.Var
+import com.typewritermc.engine.paper.entry.entries.*
 import com.typewritermc.engine.paper.interaction.interactionContext
 import fr.legendsofxania.dungeon.entries.manifest.definition.DungeonDefinitionEntry
 import fr.legendsofxania.dungeon.events.AsyncPlayerJoinDungeonInstanceEvent

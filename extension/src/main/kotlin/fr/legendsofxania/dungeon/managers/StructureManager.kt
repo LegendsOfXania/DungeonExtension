@@ -14,7 +14,7 @@ import org.bukkit.block.structure.Mirror
 import org.bukkit.block.structure.StructureRotation
 import org.bukkit.entity.Player
 import org.bukkit.util.BoundingBox
-import java.util.Random
+import java.util.*
 
 class StructureManager(
     private val instanceManager: InstanceManager
