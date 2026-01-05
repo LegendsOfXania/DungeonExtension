@@ -60,9 +60,9 @@ private class SelectionTool(
             setData(
                 DataComponentTypes.LORE, ItemLore.lore().addLines(
                 """
-                    </i><gray><white>Left-click</white> to select the first corner.</gray>
-                    </i><gray><white>Right-click</white> to select the second corner.</gray>
-                    </i><gray><white>Shift + Left-click</white> to save the room.</gray>
+                    <!i><gray><white>Left-click</white> to select the first corner.</gray>
+                    <!i><gray><white>Right-click</white> to select the second corner.</gray>
+                    <!i><gray><white>Shift + Left-click</white> to save the room.</gray>
                 """.trimIndent().lines().map { it.asMini() }
             ))
         } onInteract { event ->
@@ -77,12 +77,12 @@ private class SelectionTool(
         when (type) {
             ItemInteractionType.LEFT_CLICK -> {
                 corner1 = location
-                player.msg("First corner selected at <blue>${location.blockX}, ${location.blockY}, ${location.blockZ}.</blue>")
+                player.msg("First corner selected at <blue>${location.blockX}</blue>, <blue>${location.blockY}</blue>, <blue>${location.blockZ}</blue>.")
             }
 
             ItemInteractionType.RIGHT_CLICK -> {
                 corner2 = location
-                player.msg("Second corner selected at <blue>${location.blockX}, ${location.blockY}, ${location.blockZ}.</blue>")
+                player.msg("Second corner selected at <blue>${location.blockX}</blue>, <blue>${location.blockY}</blue>, <blue>${location.blockZ}</blue>.")
             }
 
             ItemInteractionType.SHIFT_LEFT_CLICK -> {
