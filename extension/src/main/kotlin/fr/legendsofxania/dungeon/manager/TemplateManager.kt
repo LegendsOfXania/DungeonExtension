@@ -13,9 +13,27 @@ object TemplateManager {
         corner1: Location,
         corner2: Location,
         entry: RoomTemplateEntry
-    ): Result<Unit> {
+    ): Result<Unit> = runCatching {
+        val world = corner1.world
         val structureManager = server.structureManager
-        val structure = structureManager.createStructure().also { it.fill(corner1, corner2, true) }
+
+        val minCorner = Location(
+            world,
+            minOf(corner1.blockX, corner2.blockX).toDouble(),
+            minOf(corner1.blockY, corner2.blockY).toDouble(),
+            minOf(corner1.blockZ, corner2.blockZ).toDouble()
+        )
+
+        val maxCorner = Location(
+            world,
+            maxOf(corner1.blockX, corner2.blockX).toDouble() + 1,
+            maxOf(corner1.blockY, corner2.blockY).toDouble() + 1,
+            maxOf(corner1.blockZ, corner2.blockZ).toDouble() + 1
+        )
+
+        val structure = structureManager.createStructure().apply {
+            fill(minCorner, maxCorner, true)
+        }
 
         val bytes = ByteArrayOutputStream().use { out ->
             structureManager.saveStructure(out, structure)
@@ -23,15 +41,12 @@ object TemplateManager {
         }
 
         entry.binaryData(bytes)
-        return Result.success(Unit)
     }
 
     suspend fun loadTemplate(entry: RoomTemplateEntry): Structure? {
-        if (entry.hasData()) {
-            val inputStream = entry.binaryData()?.inputStream() ?: return null
-            return server.structureManager.loadStructure(inputStream)
-        }
-
-        return null
+        return entry.binaryData()
+            ?.inputStream()
+            ?.use { server.structureManager.loadStructure(it) }
+            .takeIf { entry.hasData() }
     }
 }
