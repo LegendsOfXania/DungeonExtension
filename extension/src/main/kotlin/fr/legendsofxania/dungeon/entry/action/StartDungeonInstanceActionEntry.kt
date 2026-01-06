@@ -38,7 +38,9 @@ class StartDungeonInstanceActionEntry(
     @Help("The group for which to start the DungeonInstance.")
     val group: Ref<GroupEntry> = emptyRef(),
     @Help("The DungeonDefinition to use for the DungeonInstance.")
-    val dungeon: Ref<DungeonDefinitionEntry> = emptyRef()
+    val dungeon: Ref<DungeonDefinitionEntry> = emptyRef(),
+    @Help("Only activate if you are creating the dungeon. This will give you information to help you.")
+    val debug: Boolean = false
 ) : ActionEntry {
     override val eventTriggers: List<EventTrigger>
         get() = listOf(
