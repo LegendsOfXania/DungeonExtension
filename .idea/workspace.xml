@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Fox: a piece of the structure was missing.">
+    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Start working on the dev tools">
       <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/util/BoundingBoxViewer.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entry/action/StartDungeonInstanceActionEntry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entry/action/StartDungeonInstanceActionEntry.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interaction/dungeon/instances/DungeonInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interaction/dungeon/instances/DungeonInstance.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interaction/content/RoomTemplateContentMode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interaction/content/RoomTemplateContentMode.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +261,9 @@
       <workItem from="1767620739837" duration="5647000" />
       <workItem from="1767627454108" duration="12000" />
       <workItem from="1767636731762" duration="4938000" />
-      <workItem from="1767726958990" duration="1751000" />
+      <workItem from="1767726958990" duration="2723000" />
+      <workItem from="1767730394850" duration="687000" />
+      <workItem from="1767805001735" duration="1165000" />
     </task>
     <task id="LOCAL-00001" summary="Update files">
       <option name="closed" value="true" />
@@ -536,7 +537,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767625792939</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Start working on the dev tools">
+      <option name="closed" value="true" />
+      <created>1767729180500</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1767729180501</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +563,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update Instances" />
     <MESSAGE value="Start working on a new InstanceManager" />
     <MESSAGE value="Update DungeonInstance" />
     <MESSAGE value="Start working on PlayerManager" />
@@ -579,7 +587,8 @@
     <MESSAGE value="Update package's names" />
     <MESSAGE value="Update color in some messages" />
     <MESSAGE value="Fox: a piece of the structure was missing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fox: a piece of the structure was missing." />
+    <MESSAGE value="Start working on the dev tools" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start working on the dev tools" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
