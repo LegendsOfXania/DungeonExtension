@@ -6,6 +6,7 @@ import com.typewritermc.engine.paper.interaction.interactionContext
 import com.typewritermc.engine.paper.utils.Sync
 import fr.legendsofxania.dungeon.entry.manifest.definition.RoomDefinitionEntry
 import fr.legendsofxania.dungeon.interaction.dungeon.instances.DungeonInstance
+import fr.legendsofxania.structure.manager.TemplateManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.bukkit.Location

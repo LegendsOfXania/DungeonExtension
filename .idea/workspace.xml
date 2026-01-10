@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Add BoundingBoxViewer in RoomTemplateContentMode">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/extension/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/extension/settings.gradle.kts" afterDir="false" />
-    </list>
+    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="The extension now require the StructureExtension" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -305,6 +300,7 @@
       <workItem from="1767990169659" duration="510000" />
       <workItem from="1768064968095" duration="29000" />
       <workItem from="1768065073453" duration="1063000" />
+      <workItem from="1768066214496" duration="35000" />
     </task>
     <task id="LOCAL-00001" summary="Update files">
       <option name="closed" value="true" />
@@ -594,7 +590,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767806372645</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="The extension now require the StructureExtension">
+      <option name="closed" value="true" />
+      <created>1768066242105</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1768066242105</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +616,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update DungeonInstance" />
     <MESSAGE value="Start working on PlayerManager" />
     <MESSAGE value="Create RelativeRoomPositionVariableEntry" />
     <MESSAGE value="StructureManager now create RoomInstances" />
@@ -637,7 +640,8 @@
     <MESSAGE value="Fox: a piece of the structure was missing." />
     <MESSAGE value="Start working on the dev tools" />
     <MESSAGE value="Add BoundingBoxViewer in RoomTemplateContentMode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add BoundingBoxViewer in RoomTemplateContentMode" />
+    <MESSAGE value="The extension now require the StructureExtension" />
+    <option name="LAST_COMMIT_MESSAGE" value="The extension now require the StructureExtension" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

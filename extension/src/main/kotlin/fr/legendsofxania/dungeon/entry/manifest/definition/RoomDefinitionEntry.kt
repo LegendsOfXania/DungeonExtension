@@ -9,8 +9,8 @@ import com.typewritermc.core.extension.annotations.Tags
 import com.typewritermc.engine.paper.entry.ManifestEntry
 import com.typewritermc.engine.paper.entry.entries.ConstVar
 import com.typewritermc.engine.paper.entry.entries.Var
-import fr.legendsofxania.dungeon.entry.static.template.RoomTemplateEntry
 import fr.legendsofxania.dungeon.enum.Direction
+import fr.legendsofxania.structure.entry.static.template.StructureTemplateEntry
 
 @Entry(
     "room_definition",
@@ -32,7 +32,7 @@ class RoomDefinitionEntry(
     @Help("The next room(s) of the dungeon. Leave empty if this is the last one.")
     val children: List<Ref<RoomDefinitionEntry>> = emptyList(),
     @Help("The RoomTemplate to use for this room.")
-    val template: Var<Ref<RoomTemplateEntry>> = ConstVar(emptyRef()),
+    val template: Var<Ref<StructureTemplateEntry>> = ConstVar(emptyRef()),
     @Help("The direction in which the RoomInstance will be generated.")
     val direction: Var<Direction> = ConstVar(Direction.NORTH)
 ) : ManifestEntry
