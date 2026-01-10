@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Start working on the dev tools">
-      <change afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/util/BoundingBoxViewer.kt" afterDir="false" />
+    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Add BoundingBoxViewer in RoomTemplateContentMode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interaction/content/RoomTemplateContentMode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/interaction/content/RoomTemplateContentMode.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/extension/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/extension/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +91,7 @@
     &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.extension [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.extension [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.extension.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
@@ -98,7 +100,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dhaus/Documents/Code/Typewriter/DungeonExtension/extension/src/main/kotlin/fr/legendsofxania/dungeon/entries/manifest/audience&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dhaus/Documents/Code/Typewriter/DungeonExtension&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -112,6 +114,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dhaus\Documents\Code\Typewriter\DungeonExtension\extension\src\main\kotlin\fr\legendsofxania\dungeon\entries\manifest\audience" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dhaus\Documents\Code\Typewriter\DungeonExtension" />
+    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="fr.legendsofxania.dungeon.entries.static.facts" />
     </key>
@@ -119,6 +124,12 @@
       <recent name="fr.legendsofxania.dungeon.interactions.dungeon.trigger" />
       <recent name="fr.legendsofxania.dungeon.interactions.dungeon" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle --refresh-dependencies" />
+      <command value="gradle clean --refresh-dependencies" />
+    </option>
   </component>
   <component name="RunManager" selected="Gradle.extension [build]">
     <configuration name="extension [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -221,9 +232,33 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
+    <configuration name="extension" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/extension" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--refresh-dependencies" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.extension [build]" />
+        <item itemvalue="Gradle.extension" />
         <item itemvalue="Gradle.extension [clean]" />
       </list>
     </recent_temporary>
@@ -263,7 +298,13 @@
       <workItem from="1767636731762" duration="4938000" />
       <workItem from="1767726958990" duration="2723000" />
       <workItem from="1767730394850" duration="687000" />
-      <workItem from="1767805001735" duration="1165000" />
+      <workItem from="1767805001735" duration="1518000" />
+      <workItem from="1767807000227" duration="9000" />
+      <workItem from="1767989089854" duration="375000" />
+      <workItem from="1767989529149" duration="596000" />
+      <workItem from="1767990169659" duration="510000" />
+      <workItem from="1768064968095" duration="29000" />
+      <workItem from="1768065073453" duration="1063000" />
     </task>
     <task id="LOCAL-00001" summary="Update files">
       <option name="closed" value="true" />
@@ -545,7 +586,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767729180501</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Add BoundingBoxViewer in RoomTemplateContentMode">
+      <option name="closed" value="true" />
+      <created>1767806372645</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1767806372645</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +612,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Start working on a new InstanceManager" />
     <MESSAGE value="Update DungeonInstance" />
     <MESSAGE value="Start working on PlayerManager" />
     <MESSAGE value="Create RelativeRoomPositionVariableEntry" />
@@ -588,7 +636,8 @@
     <MESSAGE value="Update color in some messages" />
     <MESSAGE value="Fox: a piece of the structure was missing." />
     <MESSAGE value="Start working on the dev tools" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start working on the dev tools" />
+    <MESSAGE value="Add BoundingBoxViewer in RoomTemplateContentMode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add BoundingBoxViewer in RoomTemplateContentMode" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

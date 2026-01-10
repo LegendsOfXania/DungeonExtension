@@ -8,8 +8,12 @@ plugins {
 group = "fr.legendsofxania"
 version = "0.0.1"
 
-repositories {}
-dependencies {}
+repositories {
+    mavenLocal()
+}
+dependencies {
+    implementation("fr.legendsofxania:Structure:0.0.1")
+}
 
 typewriter {
     namespace = "legendsofxania"
@@ -25,6 +29,9 @@ typewriter {
         engineVersion = "0.9.0-beta-170"
         channel = com.typewritermc.moduleplugin.ReleaseChannel.BETA
 
+        dependencies {
+            dependency("legendsofxania", "Structure")
+        }
         paper()
     }
 }
