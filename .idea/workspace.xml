@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="The extension now require the StructureExtension" />
+    <list default="true" id="21b64204-63b7-42f6-8055-1554997439bf" name="Changes" comment="Use StructureExtension to manage TemplateEntry">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/extension/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entry/manifest/definition/RoomDefinitionEntry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/kotlin/fr/legendsofxania/dungeon/entry/manifest/definition/RoomDefinitionEntry.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,31 +84,32 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.extension [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.extension [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.extension.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dhaus/Documents/Code/Typewriter/DungeonExtension&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.extension [build].executor": "Run",
+    "Gradle.extension [clean build].executor": "Run",
+    "Gradle.extension [clean].executor": "Run",
+    "Gradle.extension.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/dhaus/Documents/Code/Typewriter/DungeonExtension",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dhaus\Documents\Code\Typewriter\DungeonExtension\extension\src\main\kotlin\fr\legendsofxania\dungeon\entries\manifest\audience" />
@@ -123,7 +128,9 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradle --refresh-dependencies" />
+      <command value="gradle build --refresh-dependencies" />
       <command value="gradle clean --refresh-dependencies" />
+      <command value="gradle clean build --refresh-dependencies" />
     </option>
   </component>
   <component name="RunManager" selected="Gradle.extension [build]">
@@ -163,6 +170,32 @@
         </option>
         <option name="taskNames">
           <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="extension [clean build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/extension" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--refresh-dependencies" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
             <option value="build" />
           </list>
         </option>
@@ -253,6 +286,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.extension [build]" />
+        <item itemvalue="Gradle.extension [clean build]" />
         <item itemvalue="Gradle.extension" />
         <item itemvalue="Gradle.extension [clean]" />
       </list>
@@ -301,6 +335,10 @@
       <workItem from="1768064968095" duration="29000" />
       <workItem from="1768065073453" duration="1063000" />
       <workItem from="1768066214496" duration="35000" />
+      <workItem from="1768071812280" duration="307000" />
+      <workItem from="1768127837607" duration="32000" />
+      <workItem from="1768128101263" duration="1119000" />
+      <workItem from="1768158295044" duration="1058000" />
     </task>
     <task id="LOCAL-00001" summary="Update files">
       <option name="closed" value="true" />
@@ -598,7 +636,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768066242105</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Use StructureExtension to manage TemplateEntry">
+      <option name="closed" value="true" />
+      <created>1768072090205</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1768072090205</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,7 +662,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Start working on PlayerManager" />
     <MESSAGE value="Create RelativeRoomPositionVariableEntry" />
     <MESSAGE value="StructureManager now create RoomInstances" />
     <MESSAGE value="Update events' names" />
@@ -641,7 +686,8 @@
     <MESSAGE value="Start working on the dev tools" />
     <MESSAGE value="Add BoundingBoxViewer in RoomTemplateContentMode" />
     <MESSAGE value="The extension now require the StructureExtension" />
-    <option name="LAST_COMMIT_MESSAGE" value="The extension now require the StructureExtension" />
+    <MESSAGE value="Use StructureExtension to manage TemplateEntry" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use StructureExtension to manage TemplateEntry" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

@@ -12,7 +12,7 @@ repositories {
     mavenLocal()
 }
 dependencies {
-    implementation("fr.legendsofxania:Structure:0.0.1")
+    compileOnly("fr.legendsofxania:StructureExtension:0.0.1")
 }
 
 typewriter {
