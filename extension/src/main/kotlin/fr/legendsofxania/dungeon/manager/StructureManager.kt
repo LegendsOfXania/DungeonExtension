@@ -61,7 +61,7 @@ class StructureManager(
     ): Location {
         val template = entry.template.get(player, player.interactionContext).entry
             ?: error("RoomTemplateEntry not found for RoomDefinitionEntry: $entry")
-        val structure = TemplateManager.loadTemplate(template)
+        val structure = TemplateManager.loadTemplateAsStructure(template)
             ?: error("Structure not found for RoomTemplate: $template")
 
         val direction = entry.direction.get(player, player.interactionContext)
